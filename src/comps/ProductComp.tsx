@@ -1,8 +1,8 @@
 import { Rating } from "@mui/material";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { store, addToCart } from "../store/CartStore";
 
-function ProductComp({ product}) {
+function ProductComp({ product }) {
   const add = (p) => {
     store.dispatch(addToCart(p));
   };
@@ -20,14 +20,14 @@ function ProductComp({ product}) {
         <p>
           <strong>Category:</strong> {product.category}
         </p>
-        <Link to={`/product/${product.id}`}>
+        <NavLink to={`/product/${product.id}`}>
           Product Details
           <br />
           <img
             src={product.image || "../assets/images-not-found.webp"}
             alt={product.title}
           />
-        </Link>
+        </NavLink>
         <br />
         <Rating
           name="product-rating"
