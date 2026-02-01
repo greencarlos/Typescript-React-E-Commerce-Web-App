@@ -43,7 +43,7 @@ function HomePage() {
           onChange={(e) => selectCategories(e)}
         >
           <option>all categories</option>
-          {data.length > 0 &&
+          {data && data.length > 0 &&
             Array.from(new Set(data.map((product) => product.category))).map(
               (category, i) => (
                 <option key={crypto.randomUUID()}>{category}</option>
