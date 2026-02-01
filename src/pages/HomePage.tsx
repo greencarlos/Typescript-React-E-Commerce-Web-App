@@ -54,7 +54,7 @@ function HomePage() {
       <div className="card">
         {products &&
           products.map((product, idx) => (
-            <ProductComp key={product.idx} product={product} />
+            <ProductComp key={crypto.randomUUID()} product={product} />
           ))}
       </div>
     </>
